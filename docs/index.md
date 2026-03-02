@@ -1,25 +1,44 @@
 ---
 layout: home
-title: 栄区民野球大会
+title: 栄区野球協会
 hero:
-  name: 栄区民野球大会
-  text: 市民が主役の熱戦をお届けします
-  tagline: 最新の日程・試合結果や協会情報を公開中
+  name: 栄区野球協会
+  text: 栄区民野球大会を開催中
   actions:
     - theme: brand
-      text: 日程・試合結果を見る
-      link: /schedule/
-    - theme: alt
-      text: 協会概要を知る
-      link: /association
+      text: 組合せ・日程を見る
+      link: /news/
 ---
+
+<script setup>
+const newsModules = import.meta.glob('./news/*.md', {
+  eager: true,
+  import: '__pageData'
+})
+
+const latestNews = Object.entries(newsModules)
+  .filter(([path]) => /\.\/news\/\d{4}-\d{2}-\d{2}-.+\.md$/.test(path))
+  .sort(([pathA], [pathB]) => pathB.localeCompare(pathA))
+  .slice(0, 3)
+  .map(([path, pageData]) => {
+    const slug = path.match(/\.\/news\/(.+)\.md$/)?.[1] ?? ''
+    const parsedPageData = typeof pageData === 'string' ? JSON.parse(pageData) : pageData
+
+    return {
+      title: parsedPageData?.frontmatter?.title ?? slug,
+      link: `/news/${slug}`
+    }
+  })
+</script>
 
 ## 最新ニュース
 
-- [準々決勝プレビュー公開 (2025年4月20日開催予定)](/schedule/2025-04-20-quarterfinal-preview)
-- [4月13日 試合結果まとめ](/schedule/2025-04-13-results)
-- [開幕戦レポートを掲載しました](/schedule/2025-04-06-opening)
+<ul>
+  <li v-for="news in latestNews" :key="news.link">
+    <a :href="news.link">{{ news.title }}</a>
+  </li>
+</ul>
 
 ## お問い合わせ
 
-大会に関するお問い合わせは、`info@city-baseball.jp` までご連絡ください。
+栄区野球協会に関するお問い合わせは、[問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLScTGB5kxiIcle_gSjp9jTVGVUhWsiErTJTWfPeVnKtBt83n3A/viewform) までご連絡ください。

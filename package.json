@@ -16,5 +16,8 @@
         "@algolia/client-search"
       ]
     }
+  },
+  "dependencies": {
+    "medium-zoom": "^1.1.0"
   }
 }

@@ -1,0 +1,7 @@
+.news-zoom-enabled .vp-doc img {
+	cursor: zoom-in;
+}
+
+.news-zoom-enabled .medium-zoom-image--opened {
+	cursor: zoom-out;
+}
