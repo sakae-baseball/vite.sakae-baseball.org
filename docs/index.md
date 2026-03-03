@@ -45,6 +45,8 @@ const latestNews = Object.entries(newsModules)
   <a href="news/2026-03-07-umpire.html">審判員募集中</a>
 </div>
 
+<img src="/sakae40th.png" alt="栄区野球協会40周年記念" style="display: block; width: clamp(140px, 25vw, 320px); max-width: 100%; height: auto; margin: 0 auto;" />
+
 
 ## お問い合わせ
 
