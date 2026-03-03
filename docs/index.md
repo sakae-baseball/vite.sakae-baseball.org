@@ -4,6 +4,9 @@ title: 栄区野球協会
 hero:
   name: 栄区野球協会
   text: 栄区民野球大会を開催中
+  image:
+    src: /hero.jpg
+    alt: 栄区野球協会
   actions:
     - theme: brand
       text: 組合せ・日程を見る
