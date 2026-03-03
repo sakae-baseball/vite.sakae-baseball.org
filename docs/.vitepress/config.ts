@@ -9,7 +9,13 @@ export default defineConfig({
 		['meta', { name: 'keywords', content: '栄区民野球大会, 軟式野球, 横浜市栄区' }],
 		['meta', { property: 'og:type', content: 'website' }],
 		['meta', { property: 'og:title', content: '栄区野球協会' }],
-		['meta', { property: 'og:description', content: '栄区野球協会の公式サイトです。日程・結果や協会情報を掲載しています。' }]
+		['meta', { property: 'og:description', content: '栄区野球協会の公式サイトです。日程・結果や協会情報を掲載しています。' }],
+		['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-W7E5WF4QNH' }],
+		[
+			'script',
+			{},
+			"window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-W7E5WF4QNH');"
+		]
 	],
 	transformHead: ({ pageData }) => {
 		const frontmatter = pageData.frontmatter ?? {}
