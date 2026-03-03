@@ -11,6 +11,36 @@ export default defineConfig({
 		['meta', { property: 'og:title', content: '栄区野球協会' }],
 		['meta', { property: 'og:description', content: '栄区野球協会の公式サイトです。日程・結果や協会情報を掲載しています。' }]
 	],
+	transformHead: ({ pageData }) => {
+		const frontmatter = pageData.frontmatter ?? {}
+		const frontmatterImage = typeof frontmatter.image === 'string' ? frontmatter.image : null
+		const frontmatterHead = Array.isArray(frontmatter.head) ? frontmatter.head : []
+
+		const hasOgImageInHead = frontmatterHead.some((entry) => {
+			if (!Array.isArray(entry) || entry.length < 2) {
+				return false
+			}
+
+			const [tag, attrs] = entry
+			if (tag !== 'meta' || !attrs || typeof attrs !== 'object') {
+				return false
+			}
+
+			const metaProperty = (attrs as Record<string, unknown>).property
+			const metaName = (attrs as Record<string, unknown>).name
+
+			return metaProperty === 'og:image' || metaName === 'twitter:image'
+		})
+
+		if (frontmatterImage || hasOgImageInHead) {
+			return []
+		}
+
+		return [
+			['meta', { property: 'og:image', content: '/sakaejsbb.png' }],
+			['meta', { name: 'twitter:image', content: '/sakaejsbb.png' }]
+		]
+	},
 	themeConfig: {
 		nav: [
 				{ text: 'トップ', link: '/' },
