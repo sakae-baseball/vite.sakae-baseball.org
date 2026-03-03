@@ -27,7 +27,7 @@ npm run dev
 npm run build
 ```
 
-生成された静的ファイルは `docs/.vitepress/dist` に出力されます。プレビューする場合は下記コマンドを利用できます。
+生成された静的ファイルは `docs/.vitepress/dist` に出力されます。ビルド完了後に `dist` 配下の画像（jpg/jpeg/png/webp）を自動で最適化します。プレビューする場合は下記コマンドを利用できます。
 
 ```bash
 npm run serve

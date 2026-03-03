@@ -4,10 +4,11 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "build": "vitepress build docs && node scripts/optimize-dist-images.mjs",
     "serve": "vitepress serve docs"
   },
   "devDependencies": {
+    "sharp": "^0.34.3",
     "vitepress": "1.6.4"
   },
   "pnpm": {
