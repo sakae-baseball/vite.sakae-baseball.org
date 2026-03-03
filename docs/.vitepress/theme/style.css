@@ -5,3 +5,69 @@
 .news-zoom-enabled .medium-zoom-image--opened {
 	cursor: zoom-out;
 }
+
+.VPHome .VPHero .container {
+	background-image: url('/hero.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-top: 48px;
+	padding-bottom: 48px;
+}
+
+.VPHome .VPHero .name,
+.VPHome .VPHero .text {
+	color: #fff !important;
+}
+
+.VPHome .VPHero .clip {
+	color: #fff !important;
+	background: none !important;
+	-webkit-text-fill-color: #fff !important;
+}
+
+.VPHome .VPHero .name span {
+	color: #fff !important;
+	-webkit-text-fill-color: #fff !important;
+}
+
+.VPHome .fixed-notice-banner {
+	display: flex;
+	gap: 12px;
+	margin: 12px 0 24px;
+	padding: 12px;
+	border: 1px solid var(--vp-c-divider);
+	border-left: 4px solid var(--vp-c-brand-1);
+	border-radius: 10px;
+	background: var(--vp-c-bg-soft);
+}
+
+.VPHome .fixed-notice-banner a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 12px;
+	border: 1px solid var(--vp-c-divider);
+	border-radius: 8px;
+	background: var(--vp-c-bg);
+	color: var(--vp-c-text-1);
+	text-decoration: none;
+	font-weight: 600;
+	white-space: nowrap;
+	flex: 1;
+}
+
+.VPHome .fixed-notice-banner a:hover {
+	color: var(--vp-c-brand-1);
+	border-color: var(--vp-c-brand-1);
+}
+
+@media (max-width: 640px) {
+	.VPHome .fixed-notice-banner {
+		flex-wrap: wrap;
+	}
+
+	.VPHome .fixed-notice-banner a {
+		flex: 1 1 100%;
+	}
+}

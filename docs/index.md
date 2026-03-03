@@ -3,10 +3,7 @@ layout: home
 title: 栄区野球協会
 hero:
   name: 栄区野球協会
-  text: 栄区民野球大会を開催中
-  image:
-    src: /hero.jpg
-    alt: 栄区野球協会
+  text: 栄区民野球大会開催中
   actions:
     - theme: brand
       text: 組合せ・日程を見る
@@ -41,6 +38,12 @@ const latestNews = Object.entries(newsModules)
     <a :href="news.link">{{ news.title }}</a>
   </li>
 </ul>
+
+<div class="fixed-notice-banner" role="note" aria-label="固定お知らせ">
+  <a href="news/2025-02-28-tournament.html">72回大会組合せ</a>
+  <a href="winner">過去の成績</a>
+  <a href="">審判員募集中</a>
+</div>
 
 ## お問い合わせ
 
