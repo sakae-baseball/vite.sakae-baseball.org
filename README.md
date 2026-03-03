@@ -33,6 +33,14 @@ npm run build
 npm run serve
 ```
 
+## GitHub Actions デプロイ
+
+`main` ブランチへ push（または Actions の手動実行）で、静的サイトをビルドして `sakae-jsbb.sakura.ne.jp:/home/sakae-jsbb/www/new/` へ `rsync` 配備します。
+
+事前に GitHub リポジトリの Secrets に以下を設定してください。
+
+- `SAKURA_SSH_PRIVATE_KEY`: `sakae-jsbb` ユーザーで接続可能な秘密鍵
+
 ## コンテンツ構成
 
 - `docs/index.md`: トップページ (ホームレイアウト)
