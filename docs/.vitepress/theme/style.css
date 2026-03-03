@@ -6,6 +6,10 @@
 	cursor: zoom-out;
 }
 
+.vp-doc {
+	font-size: 18px;
+}
+
 .VPHome .VPHero .container {
 	background-image: url('/hero.jpg');
 	background-size: cover;
