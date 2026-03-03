@@ -40,9 +40,9 @@ const latestNews = Object.entries(newsModules)
 </ul>
 
 <div class="fixed-notice-banner" role="note" aria-label="固定お知らせ">
-  <a href="news/2025-02-28-tournament.html">72回大会組合せ</a>
+  <a href="news/2026-02-28-tournament.html">72回大会組合せ</a>
   <a href="winner">過去の成績</a>
-  <a href="">審判員募集中</a>
+  <a href="news/2026-03-07-umpire.html">審判員募集中</a>
 </div>
 
 ## お問い合わせ
