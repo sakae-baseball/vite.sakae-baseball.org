@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
 	lang: 'ja-JP',
-	title: '横浜市 栄区野球協会',
-	description: '栄区野球大会の最新情報、日程、試合結果、協会概要を掲載しています。',
+	title: '栄区野球協会 栄区民野球大会を開催中',
+	description: '栄区民野球大会の最新情報、日程、試合結果、協会概要を掲載しています。',
 	head: [
 		['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 		['meta', { name: 'keywords', content: '栄区民野球大会, 軟式野球, 横浜市栄区' }],

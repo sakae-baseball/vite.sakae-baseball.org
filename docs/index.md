@@ -3,12 +3,16 @@ layout: home
 title: 栄区野球協会
 hero:
   name: 栄区野球協会
-  text: 栄区民野球大会開催中
+  text: 
   actions:
     - theme: brand
       text: 組合せ・日程を見る
       link: /news/
 ---
+
+::: warning
+[ホームページをリニューアルしました。以前のお知らせはこちら](https://sakae-baseball.hatenablog.com)
+:::
 
 <script setup>
 const newsModules = import.meta.glob('./news/*.md', {
