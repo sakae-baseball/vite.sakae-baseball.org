@@ -6,7 +6,7 @@ updated: 2025-02-28
 
 # 栄区制40周年記念 第72回 栄区民野球大会組合せ
 
-[大会プログラム（PDF）](https://static.sakae-baseball.org/resource/72program.pdf)
+[大会実施要項（PDF）](https://static.sakae-baseball.org/resource/72program.pdf)
 
 
 ![alt text](tmp6-1.png)
