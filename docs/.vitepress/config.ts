@@ -43,8 +43,8 @@ export default defineConfig({
 		}
 
 		return [
-			['meta', { property: 'og:image', content: '/sakaejsbb.png' }],
-			['meta', { name: 'twitter:image', content: '/sakaejsbb.png' }]
+			['meta', { property: 'og:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }],
+			['meta', { name: 'twitter:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }]
 		]
 	},
 	themeConfig: {
