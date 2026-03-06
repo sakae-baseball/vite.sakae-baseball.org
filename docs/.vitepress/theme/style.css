@@ -24,6 +24,13 @@
 	color: #fff !important;
 }
 
+.VPHome .VPHero .main,
+.VPHome .VPHero .heading,
+.VPHome .VPHero .name,
+.VPHome .VPHero .text {
+	text-align: center;
+}
+
 .VPHome .VPHero .clip {
 	color: #fff !important;
 	background: none !important;
