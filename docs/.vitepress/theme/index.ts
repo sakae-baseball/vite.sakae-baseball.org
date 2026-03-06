@@ -1,10 +1,16 @@
 import DefaultTheme from 'vitepress/theme'
 import mediumZoom from 'medium-zoom'
-import { nextTick } from 'vue'
+import { h, nextTick } from 'vue'
+import NewsArticleNav from './components/NewsArticleNav.vue'
 import './style.css'
 
 export default {
 	extends: DefaultTheme,
+	Layout() {
+		return h(DefaultTheme.Layout, null, {
+			'doc-after': () => h(NewsArticleNav)
+		})
+	},
 	enhanceApp({ router }) {
 		if (typeof window === 'undefined') {
 			return
