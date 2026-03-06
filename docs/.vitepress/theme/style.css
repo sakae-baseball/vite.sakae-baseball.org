@@ -17,6 +17,7 @@
 	background-repeat: no-repeat;
 	padding-top: 48px;
 	padding-bottom: 48px;
+	text-align: center;
 }
 
 .VPHome .VPHero .name,
@@ -24,11 +25,47 @@
 	color: #fff !important;
 }
 
-.VPHome .VPHero .main,
-.VPHome .VPHero .heading,
+
+.VPHome .VPHero .heading {
+	align-items: center;
+}
+
 .VPHome .VPHero .name,
-.VPHome .VPHero .text {
-	text-align: center;
+.VPHome .VPHero .text,
+.VPHome .VPHero .title,
+.VPHome .VPHero .tagline {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.VPHome .VPHero .container {
+	justify-content: center;
+}
+
+.VPHome .VPHero .main {
+	margin: 0 auto;
+	align-items: center;
+}
+
+.VPHome .VPHero .actions {
+	justify-content: center;
+}
+
+@media (min-width: 960px) {
+	.VPHome .VPHero.has-image .container {
+		text-align: center;
+	}
+
+	.VPHome .VPHero.has-image .actions {
+		justify-content: center;
+	}
+
+	.VPHome .VPHero.has-image .name,
+	.VPHome .VPHero.has-image .text,
+	.VPHome .VPHero.has-image .title,
+	.VPHome .VPHero.has-image .tagline {
+		margin: 0 auto;
+	}
 }
 
 .VPHome .VPHero .clip {
