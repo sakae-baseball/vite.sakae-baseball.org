@@ -24,6 +24,10 @@ const allNews = Object.entries(newsModules)
 
 # お知らせ
 
+::: warning お知らせ
+[以前のお知らせはこちら](https://sakae-baseball.hatenablog.com)
+:::
+
 ## 記事一覧
 
 <ul>

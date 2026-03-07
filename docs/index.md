@@ -10,9 +10,7 @@ hero:
       link: /news/
 ---
 
-::: warning お知らせ
-[ホームページをリニューアルしました。以前のお知らせはこちら](https://sakae-baseball.hatenablog.com)
-:::
+
 
 <script setup>
 const newsModules = import.meta.glob('./news/*.md', {
