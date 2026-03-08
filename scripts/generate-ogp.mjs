@@ -64,8 +64,8 @@ function escapeXml(s) {
 async function main() {
   const args = parseArgs(process.argv);
   const mdPath = args.md;
-  const basePath = args.base ?? "/home/azusa/work/test/newstop.png";
-  const outDir = args.outDir ?? "/home/azusa/work/test/public/ogp";
+  const basePath = args.base ?? "docs/public/newstop.png";
+  const outDir = args.outDir ?? "docs/public/ogp";
   const field = args.field ?? "ogp";
 
   if (!mdPath) {
