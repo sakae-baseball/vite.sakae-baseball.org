@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs && node scripts/optimize-dist-images.mjs",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "news:new": "node scripts/create-news.mjs"
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",

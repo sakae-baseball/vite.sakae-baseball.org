@@ -33,6 +33,25 @@ npm run build
 npm run serve
 ```
 
+## お知らせ記事の追加
+
+新規記事の雛形は次のコマンドで作成できます。
+
+```bash
+npm run news:new -- --title "記事タイトル"
+```
+
+オプション:
+
+- `--date YYYY-MM-DD`（省略時は当日）
+- `--slug your-slug`（省略時はタイトルから自動生成）
+
+作成後、必要であれば OGP 画像を生成してください。
+
+```bash
+node scripts/generate-ogp.mjs --md docs/news/YYYY-MM-DD-your-slug.md
+```
+
 ## GitHub Actions デプロイ
 
 `main` ブランチへ push（または Actions の手動実行）で、静的サイトをビルドして `sakae-jsbb.sakura.ne.jp:/home/sakae-jsbb/www/new/` へ `rsync` 配備します。
