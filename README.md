@@ -52,6 +52,10 @@ npm run news:new -- --title "記事タイトル"
 node scripts/generate-ogp.mjs --md docs/news/YYYY-MM-DD-your-slug.md
 ```
 
+`generate-ogp.mjs` 実行後は frontmatter の `ogp` が更新され、ビルド時に `og:image` / `twitter:image` として反映されます（例: `/ogp/2026-03-10-2026rule.png` → `https://sakae-baseball.org/ogp/2026-03-10-2026rule.png`）。
+
+`ogp`（および `image`）が未設定のページでは、既定値 `https://sakae-baseball.org/sakaejsbb.png` が使用されます。
+
 ## GitHub Actions デプロイ
 
 `main` ブランチへ push（または Actions の手動実行）で、静的サイトをビルドして `sakae-jsbb.sakura.ne.jp:/home/sakae-jsbb/www/new/` へ `rsync` 配備します。

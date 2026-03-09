@@ -19,7 +19,15 @@ export default defineConfig({
 	],
 	transformHead: ({ pageData }) => {
 		const frontmatter = pageData.frontmatter ?? {}
+		const frontmatterOgp = typeof frontmatter.ogp === 'string' ? frontmatter.ogp : null
 		const frontmatterImage = typeof frontmatter.image === 'string' ? frontmatter.image : null
+		const imagePath = frontmatterOgp ?? frontmatterImage
+		const resolvedImage =
+			typeof imagePath === 'string' && imagePath.length > 0
+				? imagePath.startsWith('http')
+					? imagePath
+					: `https://sakae-baseball.org${imagePath.startsWith('/') ? '' : '/'}${imagePath}`
+				: null
 		const frontmatterHead = Array.isArray(frontmatter.head) ? frontmatter.head : []
 
 		const hasOgImageInHead = frontmatterHead.some((entry) => {
@@ -38,8 +46,15 @@ export default defineConfig({
 			return metaProperty === 'og:image' || metaName === 'twitter:image'
 		})
 
-		if (frontmatterImage || hasOgImageInHead) {
+		if (hasOgImageInHead) {
 			return []
+		}
+
+		if (resolvedImage) {
+			return [
+				['meta', { property: 'og:image', content: resolvedImage }],
+				['meta', { name: 'twitter:image', content: resolvedImage }]
+			]
 		}
 
 		return [
