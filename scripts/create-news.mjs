@@ -103,6 +103,7 @@ title: ${title}
 firstPublished: ${isoDate}
 updated: ${isoDate}
 ogp: ${ogp}
+ogp:title: ${title}
 ---
 
 # ${title}
