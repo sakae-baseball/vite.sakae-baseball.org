@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type HeadConfig } from 'vitepress'
 
 export default defineConfig({
 	lang: 'ja-JP',
@@ -8,6 +8,7 @@ export default defineConfig({
 		['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 		['meta', { name: 'keywords', content: '栄区民野球大会, 軟式野球, 横浜市栄区' }],
 		['meta', { property: 'og:type', content: 'website' }],
+		['meta', { property: 'og:site_name', content: '栄区野球協会' }],
 		['meta', { property: 'og:title', content: '栄区野球協会' }],
 		['meta', { property: 'og:description', content: '栄区野球協会の公式サイトです。日程・結果や協会情報を掲載しています。' }],
 		['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-W7E5WF4QNH' }],
@@ -62,8 +63,8 @@ export default defineConfig({
 			return metaProperty === 'og:type'
 		})
 
-		const articleTypeHead = isNewsArticle && !hasOgTypeInHead
-			? [['meta', { property: 'og:type', content: 'article' }] as const]
+		const articleTypeHead: HeadConfig[] = isNewsArticle && !hasOgTypeInHead
+			? [['meta', { property: 'og:type', content: 'article' }]]
 			: []
 
 		if (hasOgImageInHead) {
@@ -73,15 +74,15 @@ export default defineConfig({
 		if (resolvedImage) {
 			return [
 				...articleTypeHead,
-				['meta', { property: 'og:image', content: resolvedImage }],
-				['meta', { name: 'twitter:image', content: resolvedImage }]
+				['meta', { property: 'og:image', content: resolvedImage }] as HeadConfig,
+				['meta', { name: 'twitter:image', content: resolvedImage }] as HeadConfig
 			]
 		}
 
 		return [
 			...articleTypeHead,
-			['meta', { property: 'og:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }],
-			['meta', { name: 'twitter:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }]
+			['meta', { property: 'og:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }] as HeadConfig,
+			['meta', { name: 'twitter:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }] as HeadConfig
 		]
 	},
 	themeConfig: {
