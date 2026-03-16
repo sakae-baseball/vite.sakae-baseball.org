@@ -19,6 +19,8 @@ export default defineConfig({
 	],
 	transformHead: ({ pageData }) => {
 		const frontmatter = pageData.frontmatter ?? {}
+		const relativePath = typeof pageData.relativePath === 'string' ? pageData.relativePath : ''
+		const isNewsArticle = /^news\/(?!index\.md$).+\.md$/.test(relativePath)
 		const frontmatterOgp = typeof frontmatter.ogp === 'string' ? frontmatter.ogp : null
 		const frontmatterImage = typeof frontmatter.image === 'string' ? frontmatter.image : null
 		const imagePath = frontmatterOgp ?? frontmatterImage
@@ -46,18 +48,38 @@ export default defineConfig({
 			return metaProperty === 'og:image' || metaName === 'twitter:image'
 		})
 
+		const hasOgTypeInHead = frontmatterHead.some((entry) => {
+			if (!Array.isArray(entry) || entry.length < 2) {
+				return false
+			}
+
+			const [tag, attrs] = entry
+			if (tag !== 'meta' || !attrs || typeof attrs !== 'object') {
+				return false
+			}
+
+			const metaProperty = (attrs as Record<string, unknown>).property
+			return metaProperty === 'og:type'
+		})
+
+		const articleTypeHead = isNewsArticle && !hasOgTypeInHead
+			? [['meta', { property: 'og:type', content: 'article' }] as const]
+			: []
+
 		if (hasOgImageInHead) {
-			return []
+			return [...articleTypeHead]
 		}
 
 		if (resolvedImage) {
 			return [
+				...articleTypeHead,
 				['meta', { property: 'og:image', content: resolvedImage }],
 				['meta', { name: 'twitter:image', content: resolvedImage }]
 			]
 		}
 
 		return [
+			...articleTypeHead,
 			['meta', { property: 'og:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }],
 			['meta', { name: 'twitter:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }]
 		]
