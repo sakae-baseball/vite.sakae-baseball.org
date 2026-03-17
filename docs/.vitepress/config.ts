@@ -11,6 +11,7 @@ export default defineConfig({
 		['meta', { property: 'og:site_name', content: '栄区野球協会' }],
 		['meta', { property: 'og:title', content: '栄区野球協会' }],
 		['meta', { property: 'og:description', content: '栄区野球協会の公式サイトです。日程・結果や協会情報を掲載しています。' }],
+		['meta', { property: 'twitter:card', content: 'summary_large_image' }],
 		['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-W7E5WF4QNH' }],
 		[
 			'script',
