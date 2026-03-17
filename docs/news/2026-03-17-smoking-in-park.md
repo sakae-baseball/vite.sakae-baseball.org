@@ -4,6 +4,7 @@ firstPublished: 2026-03-17T00:00:00.000Z
 updated: 2026-03-17T00:00:00.000Z
 ogp: /ogp/2026-03-17-smoking-in-park.png
 'og:title': 公園内での喫煙について
+og:type: article
 ---
 
 # 公園内での喫煙について
