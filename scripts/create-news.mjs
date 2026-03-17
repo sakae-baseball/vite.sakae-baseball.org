@@ -104,6 +104,7 @@ firstPublished: ${isoDate}
 updated: ${isoDate}
 ogp: ${ogp}
 og:title: ${title}
+og:type: article
 ---
 
 # ${title}
