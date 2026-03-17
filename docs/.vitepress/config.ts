@@ -22,6 +22,7 @@ export default defineConfig({
 		const frontmatter = pageData.frontmatter ?? {}
 		const relativePath = typeof pageData.relativePath === 'string' ? pageData.relativePath : ''
 		const isNewsArticle = /^news\/(?!index\.md$).+\.md$/.test(relativePath)
+
 		const frontmatterOgp = typeof frontmatter.ogp === 'string' ? frontmatter.ogp : null
 		const frontmatterImage = typeof frontmatter.image === 'string' ? frontmatter.image : null
 		const imagePath = frontmatterOgp ?? frontmatterImage
@@ -31,49 +32,59 @@ export default defineConfig({
 					? imagePath
 					: `https://sakae-baseball.org${imagePath.startsWith('/') ? '' : '/'}${imagePath}`
 				: null
+
+		const frontmatterOgpTitleRaw = (frontmatter as Record<string, unknown>)['og:title']
+		const frontmatterOgpTitle = typeof frontmatterOgpTitleRaw === 'string' ? frontmatterOgpTitleRaw : null
+		const frontmatterTitle = typeof frontmatter.title === 'string' ? frontmatter.title : null
+		const resolvedTitle = frontmatterOgpTitle ?? frontmatterTitle
+
 		const frontmatterHead = Array.isArray(frontmatter.head) ? frontmatter.head : []
 
 		const hasOgImageInHead = frontmatterHead.some((entry) => {
-			if (!Array.isArray(entry) || entry.length < 2) {
-				return false
-			}
-
+			if (!Array.isArray(entry) || entry.length < 2) return false
 			const [tag, attrs] = entry
-			if (tag !== 'meta' || !attrs || typeof attrs !== 'object') {
-				return false
-			}
-
+			if (tag !== 'meta' || !attrs || typeof attrs !== 'object') return false
 			const metaProperty = (attrs as Record<string, unknown>).property
 			const metaName = (attrs as Record<string, unknown>).name
-
 			return metaProperty === 'og:image' || metaName === 'twitter:image'
 		})
 
 		const hasOgTypeInHead = frontmatterHead.some((entry) => {
-			if (!Array.isArray(entry) || entry.length < 2) {
-				return false
-			}
-
+			if (!Array.isArray(entry) || entry.length < 2) return false
 			const [tag, attrs] = entry
-			if (tag !== 'meta' || !attrs || typeof attrs !== 'object') {
-				return false
-			}
-
+			if (tag !== 'meta' || !attrs || typeof attrs !== 'object') return false
 			const metaProperty = (attrs as Record<string, unknown>).property
 			return metaProperty === 'og:type'
 		})
 
-		const articleTypeHead: HeadConfig[] = isNewsArticle && !hasOgTypeInHead
-			? [['meta', { property: 'og:type', content: 'article' }]]
-			: []
+		const hasOgTitleInHead = frontmatterHead.some((entry) => {
+			if (!Array.isArray(entry) || entry.length < 2) return false
+			const [tag, attrs] = entry
+			if (tag !== 'meta' || !attrs || typeof attrs !== 'object') return false
+			const metaProperty = (attrs as Record<string, unknown>).property
+			const metaName = (attrs as Record<string, unknown>).name
+			return metaProperty === 'og:title' || metaName === 'twitter:title'
+		})
+
+		const articleTypeHead: HeadConfig[] =
+			isNewsArticle && !hasOgTypeInHead ? [['meta', { property: 'og:type', content: 'article' }]] : []
+
+		const titleHead: HeadConfig[] =
+			!hasOgTitleInHead && resolvedTitle
+				? [
+					['meta', { property: 'og:title', content: resolvedTitle }] as HeadConfig,
+					['meta', { name: 'twitter:title', content: resolvedTitle }] as HeadConfig
+				]
+				: []
 
 		if (hasOgImageInHead) {
-			return [...articleTypeHead]
+			return [...articleTypeHead, ...titleHead]
 		}
 
 		if (resolvedImage) {
 			return [
 				...articleTypeHead,
+				...titleHead,
 				['meta', { property: 'og:image', content: resolvedImage }] as HeadConfig,
 				['meta', { name: 'twitter:image', content: resolvedImage }] as HeadConfig
 			]
@@ -81,20 +92,21 @@ export default defineConfig({
 
 		return [
 			...articleTypeHead,
+			...titleHead,
 			['meta', { property: 'og:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }] as HeadConfig,
 			['meta', { name: 'twitter:image', content: 'https://sakae-baseball.org/sakaejsbb.png' }] as HeadConfig
 		]
 	},
 	themeConfig: {
 		nav: [
-				{ text: 'トップ', link: '/' },
-				{ text: 'お知らせ', link: '/news/' },
-				{ text: '成績', link: '/winner' },
-				{ text: '協会概要', link: '/association' }
+			{ text: 'トップ', link: '/' },
+			{ text: 'お知らせ', link: '/news/' },
+			{ text: '成績', link: '/winner' },
+			{ text: '協会概要', link: '/association' }
 		],
 		socialLinks: [
 			{ icon: 'twitter', link: 'https://x.com/SakaeBaseball' },
-            { icon: 'facebook', link: 'https://www.facebook.com/sakae.baseball' },
+			{ icon: 'facebook', link: 'https://www.facebook.com/sakae.baseball' },
 			{ icon: 'instagram', link: 'https://www.instagram.com/sakaejsbb/' }
 		],
 		footer: {
