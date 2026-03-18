@@ -16,6 +16,7 @@ services:
       - "5173:5173"
     environment:
       - HOME=/home/dev
+      - NPM_CONFIG_CACHE=/home/dev/.npm
     stdin_open: true
     tty: true
     init: true
