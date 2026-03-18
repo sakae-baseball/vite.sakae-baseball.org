@@ -1,0 +1,25 @@
+services:
+  vitepress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: dev
+        USER_UID: ${LOCAL_UID:-1000}
+        USER_GID: ${LOCAL_GID:-1000}
+    working_dir: /workspace
+    user: dev
+    volumes:
+      - ./:/workspace
+      - npm-cache:/home/dev/.npm
+    ports:
+      - "5173:5173"
+    environment:
+      - HOME=/home/dev
+    stdin_open: true
+    tty: true
+    init: true
+    command: ["sleep", "infinity"]
+
+volumes:
+  npm-cache:
