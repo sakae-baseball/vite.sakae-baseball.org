@@ -7,16 +7,26 @@ ARG USER_GID=1000
 # 既存のUID=1000ユーザーを削除（必要な場合）
 RUN userdel -r node 2>/dev/null || true
 
-RUN groupadd --gid ${USER_GID} ${USERNAME} \
-  && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME}
+RUN apt-get update
 
-RUN apt-get update && apt-get install -y \
+# 日本語環境を扱えるようにする
+RUN apt-get install -y locales \
+  && locale-gen ja_JP.UTF-8
+
+# 追加するユーザーはbashにする skeltonも指定
+RUN groupadd --gid ${USER_GID} ${USERNAME} \
+  && useradd --uid ${USER_UID} --gid ${USER_GID} -m -s /bin/bash -k /etc/skel ${USERNAME}
+
+RUN apt-get install -y \
   build-essential \
   curl \
   git \
   python3 \
   sudo \
   python3-pip
+
+
+
 
 # $USERNAMEをsudoグループに追加
 RUN usermod -aG sudo ${USERNAME}
