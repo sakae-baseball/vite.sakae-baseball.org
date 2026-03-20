@@ -10,8 +10,14 @@ RUN userdel -r node 2>/dev/null || true
 RUN apt-get update
 
 # 日本語環境を扱えるようにする
-RUN apt-get install -y locales \
-  && locale-gen ja_JP.UTF-8
+RUN apt-get install -y locales
+RUN locale-gen ja_JP.UTF-8
+RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
+RUN update-locale LANG=ja_JP.UTF-8
+
+ENV LANG=ja_JP.UTF-8 \
+    LANGUAGE=ja_JP:ja \
+    LC_ALL=ja_JP.UTF-8
 
 # 追加するユーザーはbashにする skeltonも指定
 RUN groupadd --gid ${USER_GID} ${USERNAME} \
