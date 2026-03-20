@@ -91,7 +91,7 @@ async function main() {
   const lineHeight = Math.round(fontSize * 1.2);
   const textBlockHeight = lines.length * lineHeight;
   const startY = Math.floor((height - textBlockHeight) / 2) + 10;
-  const bgPadTop = 120;
+  const bgPadTop = 150;
   const bgPadBottom = 28;
 
   const tspans = lines
