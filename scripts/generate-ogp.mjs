@@ -90,7 +90,9 @@ async function main() {
   const fontSize = 120;
   const lineHeight = Math.round(fontSize * 1.2);
   const textBlockHeight = lines.length * lineHeight;
-  const startY = Math.floor((height - textBlockHeight) / 2) + 10;
+  // 文字列の基準位置を中央より少し下にずらす
+  const verticalOffset = 300;
+  const startY = Math.floor((height - textBlockHeight) / 2) + verticalOffset;
   const bgPadTop = 150;
   const bgPadBottom = 28;
 
