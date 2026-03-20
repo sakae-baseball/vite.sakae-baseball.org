@@ -14,6 +14,9 @@ RUN apt-get install -y locales
 RUN locale-gen ja_JP.UTF-8
 RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
 RUN update-locale LANG=ja_JP.UTF-8
+# 日本語のnotoフォントをインストールする
+RUN apt-get install -y fonts-noto-cjk
+
 
 ENV LANG=ja_JP.UTF-8 \
     LANGUAGE=ja_JP:ja \
