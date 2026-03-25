@@ -13,6 +13,6 @@
 | 68 |2022  |[Aブロック](https://sakae-baseball.hatenablog.com/68A)/[Bブロック](https://sakae-baseball.hatenablog.com/68B)/[Cブロック](https://sakae-baseball.hatenablog.com/68C)/[Mブロック](https://sakae-baseball.hatenablog.com/68M)|
 | 69 |2023  |[Aブロック](https://sakae-baseball.hatenablog.com/69A)/[Bブロック](https://sakae-baseball.hatenablog.com/69B)/[Cブロック](https://sakae-baseball.hatenablog.com/69C)/[Mブロック](https://sakae-baseball.hatenablog.com/69M)|
 | 70 |2024  |[Aブロック](https://sakae-baseball.hatenablog.com/70A)/[Bブロック](https://sakae-baseball.hatenablog.com/70B)/[Cブロック](https://sakae-baseball.hatenablog.com/70C)/[Mブロック](https://sakae-baseball.hatenablog.com/70M)|
-| 71 |2025  |[組み合わせ表](https://sakae-baseball.hatenablog.com/entry/71A)/[表彰チーム・選手](winner/71.md) |
+| 71 |2025  |[組み合わせ表](tournament/71.md)/[表彰チーム・選手](winner/71.md) |
 | 72 |2026  |[組み合わせ表](news/2026-02-28-tournament.md)|
 
