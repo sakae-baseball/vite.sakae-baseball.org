@@ -11,7 +11,7 @@
   "devDependencies": {
     "gray-matter": "^4.0.3",
     "sharp": "^0.34.5",
-    "vitepress": "^0.1.1"
+    "vitepress": "^1.6.4"
   },
   "pnpm": {
     "peerDependencyRules": {
