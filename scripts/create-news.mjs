@@ -1,4 +1,5 @@
 import { mkdir, writeFile, access } from "node:fs/promises";
+import { spawn } from "node:child_process";
 import path from "node:path";
 
 const NEWS_DIR = path.resolve("docs/news");
@@ -74,6 +75,23 @@ async function exists(filePath) {
   }
 }
 
+function runGenerateOgp(mdPath) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(process.execPath, ["scripts/generate-ogp.mjs", "--md", mdPath], {
+      stdio: "inherit"
+    });
+
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code === 0) {
+        resolve();
+        return;
+      }
+      reject(new Error(`OGP生成に失敗しました (exit code: ${code ?? "null"})`));
+    });
+  });
+}
+
 async function main() {
   const args = parseArgs(process.argv);
   const title = (args.title ?? "").trim();
@@ -114,8 +132,11 @@ og:type: article
   await mkdir(NEWS_DIR, { recursive: true });
   await writeFile(filePath, content, "utf8");
 
+  const mdPath = `docs/news/${fileName}`;
+
   console.log(`作成: ${filePath}`);
-  console.log(`次の手順: node scripts/generate-ogp.mjs --md docs/news/${fileName}`);
+  console.log(`OGP生成を実行: node scripts/generate-ogp.mjs --md ${mdPath}`);
+  await runGenerateOgp(mdPath);
 }
 
 main().catch((error) => {
