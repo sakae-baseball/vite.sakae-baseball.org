@@ -12,10 +12,10 @@ ogp: /ogp/2026-02-28-tournament.png
 [大会実施要項（PDF）](https://static.sakae-baseball.org/resource/72program.pdf)
 
 
-![alt text](tmp6-1.png)
+![alt text](tmp9-01.png)
 
 ![alt text](tmp-02.png)
 
-![alt text](tmp-03.png)
+![alt text](tmp9-03.png)
 
 ![alt text](tmp-04.png)
