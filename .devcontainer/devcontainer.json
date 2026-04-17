@@ -1,0 +1,13 @@
+{
+  "name": "vitepress-devcontainer",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "vitepress",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "dev",
+  "shutdownAction": "stopCompose",
+  "overrideCommand": false,
+  "forwardPorts": [5173],
+  "postCreateCommand": "npm install"
+}
