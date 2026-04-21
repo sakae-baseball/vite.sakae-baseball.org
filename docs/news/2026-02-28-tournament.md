@@ -14,8 +14,8 @@ ogp: /ogp/2026-02-28-tournament.png
 
 ![alt text](tmp9-01.png)
 
-![alt text](tmp-02.png)
+![alt text](img-02.png)
 
-![alt text](tmp9-03.png)
+![alt text](img-03.png)
 
-![alt text](20260404-1-1.png)
+![alt text](img-11.png)
