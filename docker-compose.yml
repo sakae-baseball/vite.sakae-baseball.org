@@ -12,6 +12,7 @@ services:
     volumes:
       - ./:/workspace
       - npm-cache:/home/dev/.npm
+      - ~/.claude:/home/dev/.claude
     ports:
       - "5173:5173"
     environment:
