@@ -29,10 +29,26 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
 RUN apt-get install -y \
   build-essential \
   curl \
+  dnsutils \
   git \
+  htop \
+  iproute2 \
+  iputils-ping \
+  jq \
+  less \
+  lsof \
+  netcat-openbsd \
+  procps \
   python3 \
+  python3-pip \
+  rsync \
+  strace \
   sudo \
-  python3-pip
+  tmux \
+  tree \
+  unzip \
+  vim \
+  zip
 
 # gh CLI
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
