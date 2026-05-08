@@ -1,6 +1,9 @@
 import { defineConfig, type HeadConfig } from 'vitepress'
 
 export default defineConfig({
+	sitemap: {
+		hostname: 'https://www.sakae-baseball.org'
+	},
 	lang: 'ja-JP',
 	title: '栄区野球協会 栄区民野球大会を開催中',
 	description: '栄区民野球大会の最新情報、日程、試合結果、協会概要を掲載しています。',
