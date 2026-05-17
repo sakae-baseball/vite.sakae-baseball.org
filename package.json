@@ -24,6 +24,7 @@
     "medium-zoom": "^1.1.0"
   },
   "overrides": {
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.25.0",
+    "postcss": "^8.5.10"
   }
 }
