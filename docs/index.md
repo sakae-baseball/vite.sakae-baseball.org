@@ -52,4 +52,4 @@ const latestNews = Object.entries(newsModules)
 
 ## お問い合わせ
 
-栄区野球協会に関するお問い合わせは、[問い合わせフォーム](/form.html) までご連絡ください。
+栄区野球協会に関するお問い合わせは、[問い合わせフォーム](/form.php) までご連絡ください。
