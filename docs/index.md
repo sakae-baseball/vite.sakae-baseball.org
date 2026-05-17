@@ -52,4 +52,4 @@ const latestNews = Object.entries(newsModules)
 
 ## お問い合わせ
 
-栄区野球協会に関するお問い合わせは、[問い合わせフォーム](https://docs.google.com/forms/d/e/1FAIpQLScTGB5kxiIcle_gSjp9jTVGVUhWsiErTJTWfPeVnKtBt83n3A/viewform) までご連絡ください。
+栄区野球協会に関するお問い合わせは、[問い合わせフォーム](/form.html) までご連絡ください。
