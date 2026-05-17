@@ -119,6 +119,11 @@ export default defineConfig({
 		footer: {
 			message: '栄区野球協会',
 			copyright: '© 2000,Sakae Baseball Association.'
+		},
+		notFound: {
+			title: 'ページが見つかりません',
+			quote: 'お探しのページは削除されたか、URLが変更された可能性があります。',
+			linkText: 'トップページへ戻る'
 		}
 	}
 })
