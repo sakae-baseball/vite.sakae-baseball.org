@@ -1,6 +1,7 @@
 import { defineConfig, type HeadConfig } from 'vitepress'
 
 export default defineConfig({
+	ignoreDeadLinks: ['/form.php'],
 	sitemap: {
 		hostname: 'https://www.sakae-baseball.org'
 	},
