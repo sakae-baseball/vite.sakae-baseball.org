@@ -25,8 +25,11 @@ const allNews = Object.entries(newsModules)
 # お知らせ
 
 ::: warning お知らせ
-[以前のお知らせはこちら](https://sakae-baseball.hatenablog.com)
+- [今後の日程](./2026-02-28-tournament#今後の日程)
+- [大会組合せ](./2026-02-28-tournament#大会組合せ)
+- [以前のお知らせはこちら](https://sakae-baseball.hatenablog.com)
 :::
+
 
 ## 記事一覧
 
