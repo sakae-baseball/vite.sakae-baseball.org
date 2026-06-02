@@ -37,9 +37,9 @@ ogp: /ogp/2026-02-28-tournament.png
 
 ## 大会組合せ
 
-![Aブロック](img-01.png)
+![Aブロック](img-01-1.png)
 
-![Bブロック](img-02-2.png)
+![Bブロック](img-02-3.png)
 
 ![Cブロック](img-03-2.png)
 
