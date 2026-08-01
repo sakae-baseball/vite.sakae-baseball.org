@@ -21,7 +21,7 @@ const newsModules = import.meta.glob('./news/*.md', {
 const latestNews = Object.entries(newsModules)
   .filter(([path]) => /\.\/news\/\d{4}-\d{2}-\d{2}-.+\.md$/.test(path))
   .sort(([pathA], [pathB]) => pathB.localeCompare(pathA))
-  .slice(0, 3)
+  .slice(0, 5)
   .map(([path, pageData]) => {
     const slug = path.match(/\.\/news\/(.+)\.md$/)?.[1] ?? ''
     const parsedPageData = typeof pageData === 'string' ? JSON.parse(pageData) : pageData
