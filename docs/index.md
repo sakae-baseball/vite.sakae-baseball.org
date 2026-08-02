@@ -6,8 +6,8 @@ hero:
   text: 
   actions:
     - theme: brand
-      text: 組合せ・日程を見る
-      link: /news/
+      text: 組合せ・順位
+      link: /news/2026-02-28-tournament.html
 ---
 
 
@@ -33,7 +33,7 @@ const latestNews = Object.entries(newsModules)
   })
 </script>
 
-## 最新ニュース
+## 日程・お知らせ
 
 <ul>
   <li v-for="news in latestNews" :key="news.link">
@@ -42,7 +42,7 @@ const latestNews = Object.entries(newsModules)
 </ul>
 
 <div class="fixed-notice-banner" role="note" aria-label="固定お知らせ">
-  <a href="news/2026-02-28-tournament.html">72回大会組合せ</a>
+  <a href="news/2026-02-28-tournament.html">組合せ・順位</a>
   <a href="winner">過去の成績</a>
   <a href="news/2026-03-07-umpire.html">審判員募集中</a>
 </div>
