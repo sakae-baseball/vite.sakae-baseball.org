@@ -39,6 +39,7 @@ const latestNews = Object.entries(newsModules)
   <li v-for="news in latestNews" :key="news.link">
     <a :href="news.link">{{ news.title }}</a>
   </li>
+  <li><a href="news/index.html">以前のおしらせはこちら</a></li>
 </ul>
 
 <div class="fixed-notice-banner" role="note" aria-label="固定お知らせ">
