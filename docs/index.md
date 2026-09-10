@@ -45,7 +45,7 @@ const latestNews = Object.entries(newsModules)
 <div class="fixed-notice-banner" role="note" aria-label="固定お知らせ">
   <a href="news/2026-02-28-tournament.html">組合せ・順位</a>
   <a href="winner">過去の成績</a>
-  <a href="news/2026-03-07-umpire.html">審判員募集中</a>
+  <a href="news/2026-09-10-umpire.html">審判員募集中</a>
 </div>
 
 <img src="/sakae40th.png" alt="栄区野球協会40周年記念" style="display: block; width: clamp(140px, 25vw, 320px); max-width: 100%; height: auto; margin: 0 auto;" />
