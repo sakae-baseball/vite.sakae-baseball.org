@@ -108,8 +108,7 @@ export default defineConfig({
 	themeConfig: {
 		nav: [
 			{ text: 'トップ', link: '/' },
-			{ text: '日程・お知らせ', link: '/news/' },
-			{ text: '順位', link: '/news/2026-02-28-tournament.html' },
+			{ text: '日程・お知らせ', link: '/news/2026-02-28-tournament.html' },
 			{ text: 'お知らせ', link: '/news/' },
 			{ text: '協会概要', link: '/association' }
 		],
