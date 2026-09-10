@@ -116,7 +116,8 @@ export default defineConfig({
 		socialLinks: [
 			{ icon: 'twitter', link: 'https://x.com/SakaeBaseball' },
 			{ icon: 'facebook', link: 'https://www.facebook.com/sakae.baseball' },
-			{ icon: 'instagram', link: 'https://www.instagram.com/sakaejsbb/' }
+			{ icon: 'instagram', link: 'https://www.instagram.com/sakaejsbb/' },
+			{ icon: 'youtube', link: 'https://www.youtube.com/@sakaejsbb' }
 		],
 		footer: {
 			message: '栄区野球協会',
