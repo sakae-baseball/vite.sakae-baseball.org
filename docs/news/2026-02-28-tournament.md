@@ -29,8 +29,8 @@ ogp: /ogp/2026-02-28-tournament.png
 
 ![Bブロック](img-02-8.png)
 
-![Cブロック](img-03-9.png)
+![Cブロック](img-03-10.png)
 
-![MTブロックMブロック](img-04-3.png)
+![MTブロックMブロック](img-04-4.png)
 
 
