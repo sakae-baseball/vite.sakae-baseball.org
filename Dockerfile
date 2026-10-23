@@ -1,4 +1,4 @@
-FROM node:22-bookworm-slim
+FROM node:24-trixie
 
 ARG USERNAME=dev
 ARG USER_UID=1000
