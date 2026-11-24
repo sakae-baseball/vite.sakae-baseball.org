@@ -34,7 +34,7 @@ def parse_blocks_and_games(text):
     current_block = None
     for raw in text.splitlines():
         line = nfkc(raw)
-        bm = re.match(r"^([A-Z]+ブロック(?:予選|決勝)?)\s*$", line)
+        bm = re.match(r"^([A-Z]+ブロック(?:予選|準々決勝|準決勝|決勝)?)\s*$", line)
         if bm:
             current_block = bm.group(1)
             continue
@@ -56,6 +56,7 @@ def format_score_line(row):
 def find_forfeit_note(rows):
     for row in rows:
         for cell in row[1:10]:
+            cell = re.sub(r"\s+", "", cell)
             if "棄権" in cell:
                 m = re.search(r"棄権[（(]([^）)]+)[）)]", cell)
                 return f"（棄権・{m.group(1)}）" if m else "（棄権）"
@@ -119,6 +120,9 @@ def build_article(pdf_path, publish_date):
         name_a, name_b = row_a[0], row_b[0]
         total_a, total_b = row_a[10], row_b[10]
         forfeit = find_forfeit_note([row_a, row_b])
+        # 見出し用にサヨナラの「x」を除去（スコア表側は残す）
+        total_a = re.sub(r"[xX]", "", total_a)
+        total_b = re.sub(r"[xX]", "", total_b)
 
         try:
             if int(total_a) >= int(total_b):
